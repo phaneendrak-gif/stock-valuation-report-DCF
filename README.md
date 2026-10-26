@@ -1,55 +1,84 @@
 # 📊 Stock Valuation Report – DCF Model
 
-<h2 style="color:#2563eb;">🚀 About the Project</h2>
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 21"/>
+  <img src="https://img.shields.io/badge/Spring_Boot-3-green?style=for-the-badge&logo=springboot&logoColor=white" alt="Spring Boot"/>
+  <img src="https://img.shields.io/badge/React-Vite-blue?style=for-the-badge&logo=react&logoColor=white" alt="React"/>
+  <img src="https://img.shields.io/badge/DCF-Valuation-purple?style=for-the-badge" alt="DCF Valuation"/>
+</p>
 
-The Stock Valuation Report is a full-stack web application built to analyze a company's financial performance and estimate its intrinsic stock value using the Discounted Cash Flow (DCF) method.
+<p align="center">
+  <b>A full-stack financial analysis application for estimating a company's intrinsic stock value using the Discounted Cash Flow (DCF) method.</b>
+</p>
 
-<h2 style="color:#16a34a;">✨ Features</h2>
+---
 
-- Calculate intrinsic stock value using the DCF method.
-- Forecast revenue and free cash flow for five years.
-- Calculate Weighted Average Cost of Capital (WACC).
-- Estimate terminal value, enterprise value, and equity value.
-- Perform sensitivity analysis using different financial assumptions.
-- Visualize financial forecasts through interactive charts.
-- Export forecast data as a CSV file.
+## 🚀 About the Project
 
-<h2 style="color:#9333ea;">🛠️ Tech Stack</h2>
+The **Stock Valuation Report** is a Java Full Stack web application designed to analyze financial performance and estimate the intrinsic value of a company's stock using the Discounted Cash Flow (DCF) method.
 
-**Backend**
-- Java 21
-- Spring Boot
-- Spring Web
-- Bean Validation
-- REST APIs
+The application combines a **Java Spring Boot backend** with a **React frontend** to calculate projected cash flows, estimate company valuation, and analyze how changes in financial assumptions affect the results.
 
-**Frontend**
-- React
-- Vite
-- Recharts
-- HTML and CSS
+## ✨ Features
 
-**Tools**
-- Maven
-- Git and GitHub
-- VS Code / IntelliJ IDEA
+- 📈 Forecast revenue and free cash flow for five years.
+- 💰 Calculate intrinsic stock value using the DCF method.
+- 🧮 Calculate Weighted Average Cost of Capital (WACC).
+- 🏢 Estimate terminal value, enterprise value, and equity value.
+- 📊 Analyze valuation sensitivity using different WACC and terminal growth assumptions.
+- 📉 Visualize revenue and cash-flow forecasts through interactive charts.
+- 📥 Export forecast data as a CSV file.
+- ⚙️ Update financial assumptions and recalculate the valuation.
 
-<h2 style="color:#0891b2;">📁 Project Structure</h2>
+## 🛠️ Tech Stack
+
+### 🔹 Backend
+- ☕ Java 21
+- 🌱 Spring Boot
+- 🔗 Spring Web
+- ✅ Bean Validation
+- 🔌 REST APIs
+
+### 🔹 Frontend
+- ⚛️ React
+- ⚡ Vite
+- 📊 Recharts
+- 🎨 HTML and CSS
+
+### 🔹 Development Tools
+- 📦 Maven
+- 🐙 Git and GitHub
+- 💻 VS Code / IntelliJ IDEA
+
+## 📁 Project Structure
 
 ```text
 DCF_Stock_Valuation_Java_FullStack/
+│
 ├── backend/
+│   ├── src/
+│   │   ├── main/
+│   │   └── test/
+│   └── pom.xml
+│
 ├── frontend/
+│   ├── src/
+│   ├── package.json
+│   └── vite.config.js
+│
 ├── docs/
+│   ├── investment_thesis_template.md
+│   └── data_source_checklist.md
+│
 ├── screenshots/
 └── README.md
 ```
 
-<h2 style="color:#ea580c;">⚙️ How to Run the Project</h2>
+## ⚙️ How to Run the Project
 
-**1. Start the backend**
+### 1️⃣ Start the Backend
 
-Open a terminal in the `backend` directory:
+Open a terminal inside the `backend` directory and execute:
 
 ```bash
 mvn spring-boot:run
@@ -57,44 +86,87 @@ mvn spring-boot:run
 
 Backend URL: `http://localhost:8080`
 
-**2. Start the frontend**
+### 2️⃣ Start the Frontend
 
-Open another terminal in the `frontend` directory:
+Open another terminal inside the `frontend` directory and execute:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open the local URL shown in the terminal, usually `http://localhost:5173`.
+Open the local URL displayed in the terminal, usually:
 
-<h2 style="color:#db2777;">🔌 API Endpoints</h2>
+`http://localhost:5173`
+
+**Note:** Keep both terminals running while using the application.
+
+## 🔌 API Endpoints
 
 | Method | Endpoint | Description |
-|---|---|---|
-| GET | `/api/health` | Check backend status |
-| GET | `/api/valuation/default` | Load default inputs |
-| POST | `/api/valuation/calculate` | Calculate DCF valuation |
-| POST | `/api/valuation/sensitivity` | Generate sensitivity analysis |
+|:---:|---|---|
+| 🟢 GET | `/api/health` | Check backend status |
+| 🟢 GET | `/api/valuation/default` | Load default valuation inputs |
+| 🔵 POST | `/api/valuation/calculate` | Calculate DCF valuation |
+| 🔵 POST | `/api/valuation/sensitivity` | Generate sensitivity analysis |
 
-<h2 style="color:#0f766e;">📈 DCF Model</h2>
+## 📈 DCF Model
 
-**Free Cash Flow**
+### 💵 Free Cash Flow
 
-`UFCF = EBIT × (1 − Tax Rate) + D&A − CapEx − Change in NWC`
+```text
+UFCF = EBIT × (1 − Tax Rate) + D&A − CapEx − Change in NWC
+```
 
-**Terminal Value**
+### 🧮 Terminal Value
 
-`Terminal Value = Final Forecast UFCF × (1 + Growth Rate) / (WACC − Growth Rate)`
+```text
+Terminal Value = Final Forecast UFCF × (1 + Growth Rate)
+                 / (WACC − Growth Rate)
+```
 
-<h2 style="color:#4f46e5;">🔮 Future Improvements</h2>
+The model discounts forecast cash flows to estimate enterprise value, adjusts for cash and debt to estimate equity value, and calculates the implied value per share.
 
-- Integrate verified financial data from company annual reports.
-- Add bull, base, and bear valuation scenarios.
-- Introduce comparable-company valuation.
-- Improve automated testing and error handling.
-- Deploy the application and add screenshots.
+## 📸 Screenshots
 
-<h2 style="color:#64748b;">⚠️ Disclaimer</h2>
+Add screenshots of the running application to the `screenshots/` folder and display them here.
 
-This project is intended for educational purposes. Default company inputs are illustrative and have not been verified as current reported financial data. The model is assumption-sensitive and should not be treated as investment advice.
+### 🖥️ Dashboard Overview
+
+![Dashboard Overview](screenshots/01-dashboard-overview.png)
+
+### 📊 Five-Year DCF Forecast
+
+![Five-Year DCF Forecast](screenshots/02-five-year-dcf-forecast.png)
+
+### 📉 Sensitivity Analysis
+
+![Sensitivity Analysis](screenshots/03-sensitivity-analysis.png)
+
+## 🔮 Future Improvements
+
+- 📡 Integrate verified financial data from company annual reports.
+- 📊 Add bull, base, and bear valuation scenarios.
+- 🏦 Introduce comparable-company valuation using P/E and EV/EBITDA.
+- 🧪 Expand automated testing and error handling.
+- ☁️ Deploy the application online.
+
+## 👨‍💻 Author
+
+**Your Name**
+
+💼 Java Full Stack Developer | Spring Boot | Apache Kafka | REST APIs | SQL
+
+- 🐙 GitHub: https://github.com/phaneendrak-gif
+- 💼 LinkedIn: https://www.linkedin.com/in/phaneendra1345/
+> Replace the placeholders with your actual name and profile links before publishing.
+
+## 📄 License
+
+This project is available under the MIT License if you include an MIT `LICENSE` file in the repository. Otherwise, specify the license you actually intend to use.
+
+---
+
+<p align="center">
+  ⭐ If you find this project useful, consider giving the repository a star!
+</p>
