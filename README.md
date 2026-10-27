@@ -149,7 +149,7 @@ The model discounts forecast cash flows to estimate enterprise value, adjusts fo
 
 ## 📄 License
 
-This project is available under the MIT License if you include an MIT `LICENSE` file in the repository. Otherwise, specify the license you actually intend to use.
+This project is available under the MIT License .
 
 ---
 
