@@ -127,21 +127,7 @@ Terminal Value = Final Forecast UFCF × (1 + Growth Rate)
 
 The model discounts forecast cash flows to estimate enterprise value, adjusts for cash and debt to estimate equity value, and calculates the implied value per share.
 
-## 📸 Screenshots
 
-Add screenshots of the running application to the `screenshots/` folder and display them here.
-
-### 🖥️ Dashboard Overview
-
-![Dashboard Overview](screenshots/01-dashboard-overview.png)
-
-### 📊 Five-Year DCF Forecast
-
-![Five-Year DCF Forecast](screenshots/02-five-year-dcf-forecast.png)
-
-### 📉 Sensitivity Analysis
-
-![Sensitivity Analysis](screenshots/03-sensitivity-analysis.png)
 
 ## 🔮 Future Improvements
 
